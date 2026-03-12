@@ -8,7 +8,7 @@ load_dotenv()
 # GEMINI 설정
 # ========================
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-MODEL = "gemini-2.5-flash-lite"
+MODEL_NAME = "gemini-2.5-flash-lite"
 
 # ========================
 # 경로
