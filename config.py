@@ -4,20 +4,24 @@ import os
 
 load_dotenv()
 
-# API 키
+# ========================
+# GEMINI 설정
+# ========================
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+MODEL = "gemini-2.5-flash-lite"
 
-# 서비스 정보
-MARKPICK_INFO = """
-- 서비스명: 마크픽(MarkPick)
-- 서비스 내용: AI 기반 유사상표 검색
-- 관련 브랜드: 마크픽, 마크뷰, 마크클라우드, 정상특허법률사무소
-"""
-
-EVENT_INFO = ""
-
+# ========================
 # 경로
+# ========================
 BASE_DIR = Path(__file__).parent
 FILES_DIR = BASE_DIR / "files"
+DATA_DIR = FILES_DIR / "data"
+REFERENCE_DIR = FILES_DIR / "reference"
+TEMPLATES_DIR = FILES_DIR / "templates"
+IMAGES_DIR = FILES_DIR / "images"
 OUTPUT_DIR = BASE_DIR / "output"
 LOG_DIR = BASE_DIR / "log"
+
+# 필요한 폴더 자동 생성
+for _dir in [DATA_DIR, REFERENCE_DIR, TEMPLATES_DIR, IMAGES_DIR, OUTPUT_DIR, LOG_DIR]:
+    _dir.mkdir(parents=True, exist_ok=True)
