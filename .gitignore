@@ -1,0 +1,8 @@
+.env
+log/
+output/
+files/images/
+**/__pycache__/
+*.pyc
+test_*.ipynb
+.idea/
